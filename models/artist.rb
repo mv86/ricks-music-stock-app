@@ -19,4 +19,19 @@ class Artist
     artist = SqlRunner.run(sql).first
     @id = artist['id'].to_i
   end
+
+  def self.all
+    sql = "SELECT * FROM artists"
+    artists = SqlRunner.run(sql)
+    all_artists = artists.map { |artist| Artist.new(artist) }
+    return all_artists
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM artists WHERE id = #{id}"
+    artist = SqlRunner.run(sql).first
+    result = Artist.new(artist)
+    return result 
+  end
+
 end

@@ -1,0 +1,8 @@
+<h1>These are your current artists:</h1>
+
+<% @artists.each do |artist| %>
+  <b>Name: &nbsp</b> <%= artist.name %> 
+  <b>&nbspType: &nbsp</b> <%= artist.type %>
+  <br>
+  <br>
+<% end %>

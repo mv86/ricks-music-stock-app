@@ -1,3 +1,4 @@
+require_relative '../models/artist'
 #INDEX
 get '/artists' do
   @artists = Artist.all
@@ -6,17 +7,22 @@ end
 
 #NEW
 get '/artists/new' do
-  #code that returns me to the new form
+  erb(:'/artists/new')
 end
 
 #CREATE
 post '/artists' do
-  #code that creates an instance of a new artist. returns to all artists page. 
+  #code that creates an instance of a new artist. redirects to all artists page. 
+  @artist = Artist.new(params)
+  @artist.save
+  redirect_to('/artists')
 end
 
 #SHOW
 get '/artists/:id' do
   #code that shows an individual artist entry.
+  @artist = Artist.find(params[:id])
+  erb(:'artists/show')
 end
 
 #EDIT
