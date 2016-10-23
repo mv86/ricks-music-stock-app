@@ -10,4 +10,13 @@ class Artist
     @name = params['name']
     @type = params['type']
   end
+
+  def save
+    sql = "INSERT INTO artists 
+    (name, type) VALUES 
+    ('#{@name}', '#{@type}')
+    RETURNING *"
+    artist = SqlRunner.run(sql).first
+    @id = artist['id'].to_i
+  end
 end

@@ -1,6 +1,7 @@
 #INDEX
 get '/artists' do
-  #code that returns all artists
+  @artists = Artist.all
+  erb(:'/artists/index')
 end
 
 #NEW
