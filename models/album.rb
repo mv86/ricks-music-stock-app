@@ -34,4 +34,11 @@ class Album
     return all_albums
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM albums WHERE id = #{id}"
+    album = SqlRunner.run(sql).first
+    result = Album.new(album)
+    return result
+  end
+
 end

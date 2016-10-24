@@ -15,11 +15,16 @@ end
 #CREATE
 post '/albums' do
   #code that creates an instance of a new album. returns to all albums page. 
+  @album = Album.new(params)
+  @album.save
+  redirect to(:'/albums')
 end
 
 #SHOW
 get '/albums/:id' do
   #code that shows an individual album entry.
+  @album = Album.find(params[:id])
+  erb(:'/albums/show')
 end
 
 #EDIT
