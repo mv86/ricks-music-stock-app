@@ -3,6 +3,8 @@
 <form action="/albums/<%= @album.id %>" method="post">
   <label for="title">Album Title:</label>
   <input type="text" name="title" value="<%= @album.title %>">
+  <label for="artist">Artist:</label>
+  <input type="text" name="artist" value="<%= @album.artist.name %>">
   <label for="artist_id">Artist ID:</label>
   <input type="number" name="artist_id" value="<%= @album.artist_id %>">
   <label for="year">Year:</label>
