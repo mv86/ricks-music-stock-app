@@ -13,4 +13,11 @@ class Stock
     @artist_id = params['artist_id'].to_i
     @album_id = params['album_id'].to_i
   end
+
+  def self.all
+    sql = 'SELECT * FROM stock'
+    stock = Stock.new(sql)
+    all_stock = stock.map { |stock_item| Stock.new(stock) }
+    return all_stock
+  end
 end

@@ -1,6 +1,8 @@
 #INDEX
 get '/stock' do
   #code that returns all stock
+  @stock = Stock.all
+  erb(:'stock/index')
 end
 
 #NEW

@@ -1,5 +1,10 @@
 <h1>You currently have the following <%= @artist.name %> albums in stock:</h1>
 
+<% @artist.albums.each do |album| %>
+<%= album.title %>
+<br><br>
+<% end %>
+
 <form action="/artists/<%= @artist.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Artist">
