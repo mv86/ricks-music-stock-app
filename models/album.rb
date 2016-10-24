@@ -1,5 +1,6 @@
 require 'pg'
 require_relative '../db/sql_runner'
+require_relative 'stock'
 
 class Album
 
@@ -25,6 +26,14 @@ class Album
     artist = SqlRunner.run(sql).first
     albums_artist = Artist.new(artist)
     return albums_artist
+  end
+
+  def stock_orders
+    sql = "SELECT * FROM stock WHERE
+    @album_id = #{@id}"
+    stock = SqlRunner.run(sql).first
+    stock_orders = Stock.new(stock)
+    return stock_orders
   end
 
   def self.all
