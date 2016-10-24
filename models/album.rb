@@ -41,4 +41,18 @@ class Album
     return result
   end
 
+  def self.update(params)
+    sql = "UPDATE albums SET
+    title = '#{params['title']}',
+    year = #{params['year']},
+    artist_id = #{params['artist_id']}
+    WHERE id = #{params['id']}"
+    SqlRunner.run(sql)
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM albums WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
 end

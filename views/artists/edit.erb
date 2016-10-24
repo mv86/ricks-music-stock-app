@@ -1,15 +1,11 @@
-
 <h1>Please edit artists details.</h1>
 
 <form action="/artists/<%= @artist.id %>" method="post">
-  <label for="name">Artists Name:</label>
+  <label for="name">Artists: Name:</label>
   <input type="text" name="name" value="<%= @artist.name %>">
   <label for="type">Type:</label>
   <input type="text" name="type" value="<%= @artist.type %>">
   
   <input type="hidden" name="_method" value="put">
-  <input type="submit" value="Update">
-  <br><br>
-  <input type="submit" value="Delete Artist">
-  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Update Artist">
 </form>

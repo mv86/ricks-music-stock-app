@@ -47,7 +47,7 @@ class Artist
     name = '#{params['name']}', 
     type = '#{params['type']}'
     WHERE id = #{params['id']}"
-    artist = SqlRunner.run(sql)
+    SqlRunner.run(sql)
   end
 
   def self.delete(id)

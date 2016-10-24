@@ -30,14 +30,20 @@ end
 #EDIT
 get '/albums/:id/edit' do
   #code that takes me to an album edit form page.
+  @album = Album.find(params[:id])
+  erb(:'/albums/edit')
 end
 
 #UPDATE
 put '/albums/:id' do
   #code that returns the updated album for this id. back to individual album page
+  @album = Album.update(params)
+  redirect to('/albums')
 end
 
 #DELETE
 delete '/albums/:id' do
   #code that deletes the current album only
+  @album = Album.delete(params[:id])
+  redirect to('/albums')
 end
