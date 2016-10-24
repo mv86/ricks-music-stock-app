@@ -3,6 +3,8 @@ require_relative '../db/sql_runner'
 
 class Stock
 
+  attr_reader :id, :quantity, :buy_price, :sell_price, :artist_id, :album_id
+
   def initialize(params)
     @id = params['id'].to_i
     @quantity = params['quantity'].to_i

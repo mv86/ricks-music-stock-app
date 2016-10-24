@@ -34,4 +34,17 @@ class Artist
     return result 
   end
 
+  def self.update(params)
+    sql = "UPDATE artists SET 
+    name = '#{params['name']}', 
+    type = '#{params['type']}'
+    WHERE id = #{params['id']}"
+    artist = SqlRunner.run(sql)
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM artists WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
 end
