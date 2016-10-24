@@ -1,0 +1,13 @@
+<h1>You have the following albums:</h1>
+
+<% @albums.each do |album| %>
+  <b>Album Title:</b>
+  <%= album.title %>
+  <br><br>
+  <b>Artist:</b>
+  <%= album.artist.name %>
+  <br><br>
+  <b>Year:</b>
+  <%= album.year %>
+  <br><hr>
+<% end %>

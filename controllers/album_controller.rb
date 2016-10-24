@@ -1,11 +1,15 @@
+require_relative '../models/album'
 #INDEX
 get '/albums' do
   #code that returns all albums
+  @albums = Album.all
+  erb(:'/albums/index')
 end
 
 #NEW
 get '/albums/new' do
   #code that returns me to the new form
+  erb(:'/albums/new')
 end
 
 #CREATE
