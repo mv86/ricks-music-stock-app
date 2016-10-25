@@ -1,4 +1,4 @@
-<h1>Here is a list of all your stock:</h1>
+<h1>Current stock:</h1>
 
 <%  @stock.each do |item| %>
 <b>Stock Id:</b>
@@ -15,5 +15,11 @@
 <br><br>
 <b>Stock Level:</b>
 <%= item.stock_level %>
+<br><br>
+<b>Markup:</b>
+<%= item.markup %>
+<br><br>
+<b>Total Item Profit:</b>
+<%= item.total_item_profit %>
 <hr>
 <% end %>

@@ -48,6 +48,22 @@ class Stock
     return stock_level
   end
 
+  def markup
+    sql = "SELECT * FROM stock WHERE id = #{@id}"
+    item = SqlRunner.run(sql).first
+    stock_item = Stock.new(item)
+    stock_markup = Inventory.product_markup(stock_item)
+    return stock_markup
+  end 
+
+  def total_item_profit
+    sql = "SELECT * FROM stock WHERE id = #{@id}"
+    item = SqlRunner.run(sql).first
+    stock_item = Stock.new(item)
+    available_item_profit = Inventory.total_items_profit(stock_item)
+    return available_item_profit
+  end
+
   def self.all
     sql = "SELECT * FROM stock"
     stock = SqlRunner.run(sql)

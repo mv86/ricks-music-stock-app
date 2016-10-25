@@ -20,4 +20,13 @@ class TestInventory < MiniTest::Test
     assert_equal('High', stock_level)
   end
 
+  def test_product_markup
+    product_markup = Inventory.product_markup(@stock1)
+    assert_equal(6.30, product_markup)
+  end
+
+  def test_total_items_profit
+    item_profit = Inventory.total_items_profit(@stock2)
+    assert_equal(132.30, item_profit)
+  end
 end
