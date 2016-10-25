@@ -1,21 +1,25 @@
-/*body {
+body {
   margin: 0;
-  background-color: #F6FFFF;
+  background-color: #fbf3e3;
 }
+
+/*hr {
+  color: #D2B48C;
+}*/
 
 #menu {
     width: 200px;
     right: 0px;
-    height: 500px;
+    height: 700px;
     font-size: 20px;
     font-family: monospace, sans-serif;
     font-weight: bold;
     text-align: center;
     text-shadow: 1px 2px 3px #F6F7FF;
-    background-color: #D0D2FF;
-    border-radius: 8px;
+    background-color: #faf0dc;
+    /*border-radius: 8px;*/
     border-style: solid;
-    border-color: #D0D2FF;
+    border-color: #faf0dc;
     position: fixed;
     top: 0;
 }
@@ -23,7 +27,7 @@
 #menu > ul > li {
   display: block;
   width: 60px;
-  padding: 30px 100px;
+  padding: 50px;
   text-align: center;
 }
 
@@ -35,11 +39,28 @@
 
 #menu a {
   text-decoration: none;
+  border-radius: 25px;
   color: #003300;
   padding: 10px 10px 10px 10px;
 }
 
 #menu a:hover {
-  color: #003300;
-  background-color: #9093D9
-}*/
+  color: #fdf9f1;
+  background-color: #f7e7c7;
+}
+
+a {
+  color: #857961;
+}
+
+a:hover {
+  color: #6f6451;
+}
+
+h1 {
+  color: #423c30;
+}
+
+b {
+  color: #423c30;
+}

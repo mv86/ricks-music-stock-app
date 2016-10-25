@@ -2,9 +2,11 @@
 
 <% @artist.albums.each do |album| %>
 <%= album.title %>
-<br><br>
+<p>---------------------------------</p>
 <% end %>
-
+<br><br>
+<a href="artist/<%= @artist.id %>/edit">Edit Artist</a>
+<br><br><br>
 <form action="/artists/<%= @artist.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Artist">
