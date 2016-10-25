@@ -1,3 +1,5 @@
+<h1>Current Stock Cost Price: <%= @stox %></h1>
+
 <h1>Current stock:</h1>
 
 <%  @stock.each do |item| %>
@@ -21,5 +23,5 @@
 <br><br>
 <b>Total Item Profit:</b>
 <%= item.total_item_profit %>
-<hr>
+<br><hr>
 <% end %>

@@ -12,5 +12,9 @@
   <br><br>
   <b>Quantity:</b>
   <%= album.stock_orders.quantity %>
+  <br><br>
+  <a href="albums/<%= album.id %>">Go To Album</a>
+  <br><br>
+  <a href="artists/<%= album.artist.id %>">Go To Artist</a>
   <br><hr>
 <% end %>

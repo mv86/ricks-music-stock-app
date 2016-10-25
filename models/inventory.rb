@@ -1,4 +1,4 @@
-
+require_relative 'stock'
 
 class Inventory
 
@@ -20,11 +20,18 @@ class Inventory
     return markup
   end
 
-  def self.total_items_profit(stock_items)
-    markup = Inventory.product_markup(stock_items)
-    profit = markup * stock_items.quantity
-    item_profit = profit.round(2)
-    return item_profit
+  def self.total_items_profit(stock_item)
+    markup = Inventory.product_markup(stock_item)
+    item_profit = markup * stock_item.quantity
+    return item_profit.round(2)
+  end
+
+  def self.total_stock_cost(all_stock)
+    total_stock_cost = 0
+    all_stock.each do |each_stock_item|
+      total_stock_cost += (each_stock_item.buy_price * each_stock_item.quantity)
+    end
+    return total_stock_cost.round(2)
   end
 
 end

@@ -1,4 +1,5 @@
 require 'pg'
+require 'pry-byebug'
 require_relative '../db/sql_runner'
 require_relative('../models/inventory')
 
@@ -63,6 +64,17 @@ class Stock
     stock_item = stock_sql_retriever
     available_item_profit = Inventory.total_items_profit(stock_item)
     return available_item_profit
+  end
+
+  def self.total_cost_of_current_stock
+    #binding.pry
+    all_stock = Stock.all
+    #array = []
+    #all_stock.map { |item| array.push(item)}
+    #binding.pry
+    cost_of_all_stock = Inventory.total_stock_cost(all_stock)
+    #binding.pry
+    return cost_of_all_stock
   end
 
   def self.all

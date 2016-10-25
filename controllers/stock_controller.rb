@@ -2,6 +2,7 @@
 get '/stock' do
   #code that returns all stock
   @stock = Stock.all
+  @stox = Stock.total_cost_of_current_stock
   erb(:'stock/index')
 end
 
