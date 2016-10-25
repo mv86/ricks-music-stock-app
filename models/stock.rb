@@ -1,5 +1,6 @@
 require 'pg'
 require_relative '../db/sql_runner'
+require_relative('../models/inventory')
 
 class Stock
 
@@ -37,6 +38,14 @@ class Stock
     album = SqlRunner.run(sql).first
     album_info = Album.new(album)
     return album_info
+  end
+
+  def stock_level
+    sql = "SELECT * FROM stock WHERE id = #{@id}"
+    item = SqlRunner.run(sql).first
+    stock_item = Stock.new(item)
+    stock_level = Inventory.stock_level_accessor(stock_item)
+    return stock_level
   end
 
   def self.all
