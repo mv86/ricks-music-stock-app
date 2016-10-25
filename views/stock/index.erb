@@ -1,2 +1,16 @@
 <h1>Here is a list of all your stock:</h1>
 
+<%  @stock.each do |item| %>
+<b>Stock Id:</b>
+<%= item.id %>
+<br><br>
+<b>Artist:</b>
+<%= item.artist.name %>
+<br><br>
+<b>Album:</b>
+<%= item.album.title %>
+<br><br>
+<b>Quantity</b>
+<%= item.quantity %>
+<hr>
+<% end %>

@@ -39,7 +39,7 @@ class Album
   def self.all
     sql = "SELECT * FROM albums"
     albums = SqlRunner.run(sql)
-    all_albums = albums.map { |album| Album.new(album)}
+    all_albums = albums.map { |album| Album.new(album) }
     return all_albums
   end
 

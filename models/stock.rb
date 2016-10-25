@@ -23,10 +23,26 @@ class Stock
     @id = stock['id'].to_i
   end
 
+  def artist
+    sql = "SELECT * FROM artists
+    WHERE id = #{@artist_id}"
+    artist = SqlRunner.run(sql).first
+    artist_info = Artist.new(artist)
+    return artist_info
+  end
+
+  def album
+    sql = "SELECT * FROM albums
+    WHERE id = #{@album_id}"
+    album = SqlRunner.run(sql).first
+    album_info = Album.new(album)
+    return album_info
+  end
+
   def self.all
     sql = "SELECT * FROM stock"
-    stock = Stock.new(sql)
-    all_stock = stock.map { |stock_item| Stock.new(stock) }
+    stock = SqlRunner.run(sql)
+    all_stock = stock.map { |stock_item| Stock.new(stock_item) }
     return all_stock
   end
 

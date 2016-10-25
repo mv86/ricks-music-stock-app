@@ -1,0 +1,6 @@
+<h1>You have <%= @stock.quantity %> copies of <%= @stock.album.title %> by <%= @stock.artist.name %>. Stock id: <%= @stock.id %></h1>
+
+<form action="/stock/<%= @stock.id %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete Stock">
+</form>
