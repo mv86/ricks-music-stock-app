@@ -40,26 +40,27 @@ class Stock
     return album_info
   end
 
-  def stock_level
+  def stock_sql_retriever
     sql = "SELECT * FROM stock WHERE id = #{@id}"
     item = SqlRunner.run(sql).first
     stock_item = Stock.new(item)
+    return stock_item
+  end
+
+  def stock_level
+    stock_item = stock_sql_retriever
     stock_level = Inventory.stock_level_accessor(stock_item)
     return stock_level
   end
 
   def markup
-    sql = "SELECT * FROM stock WHERE id = #{@id}"
-    item = SqlRunner.run(sql).first
-    stock_item = Stock.new(item)
+    stock_item = stock_sql_retriever
     stock_markup = Inventory.product_markup(stock_item)
     return stock_markup
   end 
 
   def total_item_profit
-    sql = "SELECT * FROM stock WHERE id = #{@id}"
-    item = SqlRunner.run(sql).first
-    stock_item = Stock.new(item)
+    stock_item = stock_sql_retriever
     available_item_profit = Inventory.total_items_profit(stock_item)
     return available_item_profit
   end
