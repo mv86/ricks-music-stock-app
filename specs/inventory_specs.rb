@@ -40,4 +40,9 @@ class TestInventory < MiniTest::Test
     assert_equal(144.90, Inventory.total_available_profit(total_profit))
   end
 
+  def test_quantity_of_albums_in_stock
+    all_albums = [@stock1, @stock2]
+    assert_equal(23, Inventory.quantity_of_albums_in_stock(all_albums))
+  end
+
 end

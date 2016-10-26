@@ -44,4 +44,12 @@ class Inventory
     return total_stock_markup.round(2)
   end
 
+  def self.quantity_of_albums_in_stock(all_stock)
+    quantity_of_albums = 0
+    all_stock.each do |each_stock_item|
+      quantity_of_albums += each_stock_item.quantity
+    end
+    return quantity_of_albums
+  end
+
 end

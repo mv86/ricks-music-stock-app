@@ -78,6 +78,12 @@ class Stock
     return total_available_profit
   end
 
+  def self.quantity_of_albums_in_stock
+    all_stock = Stock.all
+    quantity_of_albums_in_stock = Inventory.quantity_of_albums_in_stock(all_stock)
+    return quantity_of_albums_in_stock
+  end
+
   def self.all
     sql = "SELECT * FROM stock"
     stock = SqlRunner.run(sql)

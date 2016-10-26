@@ -4,6 +4,7 @@ get '/stock' do
   @stock = Stock.all
   @stock_cost = Stock.total_cost_of_current_stock
   @stock_profit = Stock.total_available_profit
+  @stock_quantity = Stock.quantity_of_albums_in_stock
   erb(:'stock/index')
 end
 
