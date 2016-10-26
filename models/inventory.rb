@@ -76,4 +76,14 @@ class Inventory
     return low_stock
   end
 
+  def self.motivation_generator
+    quotes = [
+      '"Failure is the opportunity to begin again more intelligently" - Henry Ford',
+      '“Whenever you find yourself on the side of the majority, it is time to pause and reflect.” - Mark Twain',
+      '“I have not failed. I’ve just found 10,000 ways that won’t work.” - Thomas A. Edison',
+      '"Wash the dishes to wash the dishes, dont wash the dishes to clean the plates" - Thich Nhat Hanh',
+      '“The successful warrior is the average man, with laser-like focus.” - Bruce Lee']
+      return quotes.sample
+  end
+
 end
