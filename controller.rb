@@ -13,7 +13,7 @@ get '/' do
 end
 
 get '/json' do
-  content_type( :json )
+  content_type(:json)
 
     all_stock = Stock.all
 

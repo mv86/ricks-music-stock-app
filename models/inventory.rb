@@ -3,14 +3,10 @@ require_relative 'stock'
 class Inventory
 
   def self.stock_level_accessor(stock_item)
-    @very_low_stock = []
-    @low_stock = []
     case stock_item.quantity
     when 1..5
-      @very_low_stock.push(stock_item)
       return 'Very Low'
     when 6..10
-      @low_stock.push(stock_item)
       return 'Low'
     when 11..20
       return 'Good'

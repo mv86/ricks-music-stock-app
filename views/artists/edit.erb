@@ -2,9 +2,9 @@
 
 <form action="/artists/<%= @artist.id %>" method="post">
   <label for="name">Artists: Name:</label>
-  <input type="text" name="name" value="<%= @artist.name %>">
+  <input type="text" name="name" id="name" value="<%= @artist.name %>">
   <label for="type">Type:</label>
-  <input type="text" name="type" value="<%= @artist.type %>">
+  <input type="text" name="type" id="type" value="<%= @artist.type %>">
   
   <input type="hidden" name="_method" value="put">
   <input type="submit" value="Update Artist">

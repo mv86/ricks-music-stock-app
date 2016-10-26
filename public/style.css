@@ -50,6 +50,11 @@ body {
   background-color: #f7e7c7;
 }
 
+input[type=submit] {
+  background-color: #faf0dc;
+  color: #857961;
+}
+
 a {
   color: #857961;
 }
