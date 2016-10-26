@@ -67,14 +67,15 @@ class Stock
   end
 
   def self.total_cost_of_current_stock
-    #binding.pry
     all_stock = Stock.all
-    #array = []
-    #all_stock.map { |item| array.push(item)}
-    #binding.pry
     cost_of_all_stock = Inventory.total_stock_cost(all_stock)
-    #binding.pry
     return cost_of_all_stock
+  end
+
+  def self.total_available_profit
+    all_stock = Stock.all
+    total_available_profit = Inventory.total_available_profit(all_stock)
+    return total_available_profit
   end
 
   def self.all

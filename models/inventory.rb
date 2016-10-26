@@ -34,4 +34,14 @@ class Inventory
     return total_stock_cost.round(2)
   end
 
+  def self.total_available_profit(all_stock)
+    total_stock_markup = 0
+    all_stock.each do |each_stock_item|
+      stock_markup = (each_stock_item.sell_price - each_stock_item.buy_price)
+      stock_item_profit_available = (each_stock_item.quantity * stock_markup)
+      total_stock_markup += stock_item_profit_available
+    end
+    return total_stock_markup.round(2)
+  end
+
 end

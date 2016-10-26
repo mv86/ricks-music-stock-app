@@ -35,4 +35,9 @@ class TestInventory < MiniTest::Test
     assert_equal(96.60, Inventory.total_stock_cost(total_stock))
   end
 
+  def test_total_available_profit
+    total_profit = [@stock1, @stock2]
+    assert_equal(144.90, Inventory.total_available_profit(total_profit))
+  end
+
 end
