@@ -8,6 +8,7 @@ class TestInventory < MiniTest::Test
   def setup
     @stock1 = Stock.new( {'quantity' => 2, 'buy_price' => 4.20, 'sell_price' => 10.50} )
     @stock2 = Stock.new( {'quantity' => 21, 'buy_price' => 4.20, 'sell_price' => 10.50} )
+    @stock3 = Stock.new( {'quantity' => 8, 'buy_price' => 3.99, 'sell_price' => 6.50} )
   end
 
   def test_stock_level_accessor
@@ -43,6 +44,16 @@ class TestInventory < MiniTest::Test
   def test_quantity_of_albums_in_stock
     all_albums = [@stock1, @stock2]
     assert_equal(23, Inventory.quantity_of_albums_in_stock(all_albums))
+  end
+
+  def test_very_low_stock
+    all_stock = [@stock1, @stock2]
+    assert_equal([@stock1], Inventory.very_low_stock(all_stock))
+  end
+
+  def test_low_stock
+    all_stock = [@stock1, @stock2, @stock3]
+    assert_equal([@stock3], Inventory.low_stock(all_stock))
   end
 
 end

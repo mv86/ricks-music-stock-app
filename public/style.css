@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  padding-left: 30px;
   background-color: #fbf3e3;
 }
 
@@ -61,6 +62,18 @@ h1 {
   color: #423c30;
 }
 
+h2 {
+  color: #423c30;
+}
+
+h3 {
+  color: #423c30;
+}
+
 b {
   color: #423c30;
+}
+
+div > ul > li {
+  display: inline;
 }

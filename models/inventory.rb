@@ -3,10 +3,14 @@ require_relative 'stock'
 class Inventory
 
   def self.stock_level_accessor(stock_item)
+    @very_low_stock = []
+    @low_stock = []
     case stock_item.quantity
     when 1..5
+      @very_low_stock.push(stock_item)
       return 'Very Low'
     when 6..10
+      @low_stock.push(stock_item)
       return 'Low'
     when 11..20
       return 'Good'
@@ -50,6 +54,26 @@ class Inventory
       quantity_of_albums += each_stock_item.quantity
     end
     return quantity_of_albums
+  end
+
+  def self.very_low_stock(all_stock)
+    very_low_stock = []
+    all_stock.each do |item|
+      if item.quantity <= 5
+        very_low_stock.push(item)
+      end
+    end
+    return  very_low_stock
+  end
+
+  def self.low_stock(all_stock)
+    low_stock = [] 
+    all_stock.each do |item|
+      if item.quantity > 5 && item.quantity <= 10
+        low_stock.push(item)
+      end
+    end
+    return low_stock
   end
 
 end

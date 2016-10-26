@@ -29,8 +29,7 @@ class Album
   end
 
   def stock_orders
-    sql = "SELECT * FROM stock WHERE
-    @album_id = #{@id}"
+    sql = "SELECT * FROM stock WHERE album_id = #{@id}"
     stock = SqlRunner.run(sql).first
     stock_orders = Stock.new(stock)
     return stock_orders
@@ -61,6 +60,11 @@ class Album
 
   def self.delete(id)
     sql = "DELETE FROM albums WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM albums"
     SqlRunner.run(sql)
   end
 

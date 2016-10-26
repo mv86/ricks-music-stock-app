@@ -1,6 +1,6 @@
-<h1>You have <%= @stock.quantity %> copies of <%= @stock.album.title %> by <%= @stock.artist.name %>. Stock id: <%= @stock.id %></h1>
+<h1>You have <%= @stock.quantity %> copies of <%= @stock.album.title %> by <%= @stock.artist.name %>. &nbspStock id: <%= @stock.id %></h1>
 
-<a href="stock/<%= @stock.id %>/edit">Edit stock item</a>
+<a href="/stock/<%= @stock.id %>/edit">Edit stock item</a>
 <br><br><br>
 <form action="/stock/<%= @stock.id %>" method="post">
   <input type="hidden" name="_method" value="delete">

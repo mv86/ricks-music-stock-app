@@ -1,9 +1,39 @@
+<h1>Stock Analysis.</h1>
+
 <h2>Current Stock Cost Price: <%= @stock_cost %></h2>
 
 <h2>Total Available Stock Profit: <%= @stock_profit %></h2>
 
 <h2>Total Quantity Of Albums In Stock: <%= @stock_quantity %></h2>
 
+<div>
+  <ul>
+    <li>
+      <h3>Dude, these items are super low!</h3>
+      <% @stock_very_low.each do |item| %>
+      <p><%= item.artist.name %></p>
+      <p><%= item.album.title %></p>
+      <p>Quantity: <%= item.quantity %></p>
+      <a href="/stock/<%= item.id %>/edit">Order More Now</a>
+      <% end %>
+    </li>
+  </ul>
+</div>
+<br><br>
+<div>
+  <ul>
+    <li>
+      <h3>These items are fairly low.</h3>
+      <% @stock_low.each do |item| %>
+      <p><%= item.artist.name %></p>
+      <p><%= item.album.title %></p>
+      <p>Quntity: <%= item.quantity %></p>
+      <a href="/stock/<%= item.id %>/edit">Order More Now</a>
+  <% end %>
+    </li>
+  </ul>
+</div>
+<br><br>
 <h1>Current stock:</h1>
 
 <%  @stock.each do |item| %>

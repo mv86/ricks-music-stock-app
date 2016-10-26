@@ -53,7 +53,7 @@ class Stock
     stock_level = Inventory.stock_level_accessor(stock_item)
     return stock_level
   end
-
+  
   def markup
     stock_item = stock_sql_retriever
     stock_markup = Inventory.product_markup(stock_item)
@@ -84,6 +84,18 @@ class Stock
     return quantity_of_albums_in_stock
   end
 
+  def self.very_low_stock_items
+    all_stock = Stock.all
+    very_low_stock_items = Inventory.very_low_stock(all_stock)
+    return very_low_stock_items
+  end
+
+  def self.low_stock_items
+    all_stock = Stock.all
+    low_stock_items = Inventory.low_stock(all_stock)
+    return low_stock_items
+  end
+
   def self.all
     sql = "SELECT * FROM stock"
     stock = SqlRunner.run(sql)
@@ -111,6 +123,11 @@ class Stock
 
   def self.delete(id)
     sql = "DELETE FROM stock WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM stock"
     SqlRunner.run(sql)
   end
 end

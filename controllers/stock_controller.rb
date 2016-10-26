@@ -5,6 +5,8 @@ get '/stock' do
   @stock_cost = Stock.total_cost_of_current_stock
   @stock_profit = Stock.total_available_profit
   @stock_quantity = Stock.quantity_of_albums_in_stock
+  @stock_very_low = Stock.very_low_stock_items
+  @stock_low = Stock.low_stock_items
   erb(:'stock/index')
 end
 
