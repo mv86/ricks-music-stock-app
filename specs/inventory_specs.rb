@@ -56,9 +56,4 @@ class TestInventory < MiniTest::Test
     assert_equal([@stock3], Inventory.low_stock(all_stock))
   end
 
-  # def test_sort_by_quantity
-  #   all_stock = [@stock1, @stock2]
-  #   assert_equal([[@stock1], [@stock2]], Inventory.sort_by_quantity(all_stock))
-  # end
-
 end

@@ -14,7 +14,8 @@
       <p><%= item.artist.name %></p>
       <p><%= item.album.title %></p>
       <p>Quantity: <%= item.quantity %></p>
-      <a href="/stock/<%= item.id %>/edit">Order More Now</a>
+      <p>Stock ID: <%= item.id %></p>
+      <a href="/stock/new">Order More Now</a>
       <% end %>
     </li>
   </ul>
@@ -28,7 +29,8 @@
       <p><%= item.artist.name %></p>
       <p><%= item.album.title %></p>
       <p>Quntity: <%= item.quantity %></p>
-      <a href="/stock/<%= item.id %>/edit">Order More Now</a>
+      <p>Stock ID: <%= item.id %></p>
+      <a href="/stock/new">Order More Now</a>
   <% end %>
     </li>
   </ul>
@@ -37,9 +39,6 @@
 <h1>Current stock:</h1>
 
 <%  @stock.each do |item| %>
-<b>Stock Id:</b>
-<%= item.id %>
-<br><br>
 <b>Artist:</b>
 <%= item.artist.name %>
 <br><br>
@@ -57,6 +56,9 @@
 <br><br>
 <b>Total Item Profit:</b>
 <%= item.total_item_profit %>
+<br><br>
+<b>Stock Id:</b>
+<%= item.id %>
 <br><br>
 <a href="stock/<%= item.id %>/edit">Edit Stock</a>
 <br>

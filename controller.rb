@@ -15,14 +15,14 @@ end
 get '/json' do
   content_type(:json)
 
-    all_stock = Stock.all
+  all_stock = Stock.all
 
-    all_stock_array = []
-    all_stock.each do |item|
-      all_stock_array << item.artist.name
-      all_stock_array << item.album.title
-      all_stock_array << item.quantity
-    end
-
-    return all_stock_array.to_json
+  all_stock_array = []
+  all_stock.each do |item|
+    all_stock_array << item.artist.name
+    all_stock_array << item.album.title
+    all_stock_array << item.quantity
   end
+
+  return all_stock_array.to_json
+end

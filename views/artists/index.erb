@@ -1,10 +1,18 @@
+<br>
+<a href="/artists/new">>>Add New Artist<<</a>
+
 <h1>These are your current artists:</h1>
 
 <% @artists.each do |artist| %>
-  <b>Name:</b> <%= artist.name %>
-  <br><br> 
-  <b>Type:</b> <%= artist.type %>
+  <b>Name:</b> 
+  <%= artist.name %>
   <br><br>
+  <b>Type:</b> 
+  <%= artist.type %>
+  <br><br>
+  <b>Artist ID:</b> 
+  <%= artist.id %>
+  <br><br> 
   <a href="/artists/<%= artist.id %>">See all albums in stock</a>
   <br>
   <p>---------------------------------</p>

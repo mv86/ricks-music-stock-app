@@ -4,10 +4,6 @@ body {
   background-color: #fbf3e3;
 }
 
-/*hr {
-  color: #D2B48C;
-}*/
-
 #menu {
     width: 200px;
     right: 0px;
@@ -18,7 +14,6 @@ body {
     text-align: center;
     text-shadow: 1px 2px 3px #F6F7FF;
     background-color: #faf0dc;
-    /*border-radius: 8px;*/
     border-style: solid;
     border-color: #faf0dc;
     position: fixed;

@@ -1,4 +1,7 @@
-<h1>You have the following albums:</h1>
+<br>
+<a href="/albums/new">>>Add New Album<<</a>
+
+<h1>These are your current albums:</h1>
 
 <% @albums.each do |album| %>
   <b>Album Title:</b>
@@ -12,6 +15,9 @@
   <br><br>
   <b>Quantity:</b>
   <%= album.stock_orders.quantity %>
+  <br><br>
+  <b>Ablum ID:</b>
+  <%= album.id %>
   <br><br>
   <a href="albums/<%= album.id %>">Go To Album</a>
   <br><br>
