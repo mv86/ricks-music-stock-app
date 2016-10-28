@@ -3,8 +3,12 @@
 <form action="/albums" method="post">
   <label for="title">Album Title:</label>
   <input type="text" name="title" id="title">
-  <label for="artist_id">Artist Id:</label>
-  <input type="number" name="artist_id" id="artist_id" min=0>
+  <label for="artist">Artist:</label>
+  <select name="artist_id" id="artist">
+    <% @artists.each do |artist| %>
+    <option value="<%= artist.id %>"><%= artist.name %></option>
+    <% end %>
+  </select>
   <label for="year">Year:</label>
   <input type="number" name="year" id="year" min=1920>
   <input type="submit" name="Add Album">

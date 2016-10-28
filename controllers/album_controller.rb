@@ -1,4 +1,5 @@
 require_relative '../models/album'
+require_relative '../models/artist'
 #INDEX
 get '/albums' do
   #code that returns all albums
@@ -9,6 +10,7 @@ end
 #NEW
 get '/albums/new' do
   #code that returns me to the new form
+  @artists = Artist.all
   erb(:'/albums/new')
 end
 
@@ -30,6 +32,7 @@ end
 #EDIT
 get '/albums/:id/edit' do
   #code that takes me to an album edit form page.
+  @artists = Artist.all
   @album = Album.find(params[:id])
   erb(:'/albums/edit')
 end

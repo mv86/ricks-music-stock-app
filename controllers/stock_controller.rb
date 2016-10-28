@@ -13,6 +13,8 @@ end
 #NEW
 get '/stock/new' do
   #code that returns me to the new stock form
+  @artists = Artist.all
+  @albums = Album.all
   erb(:'/stock/new')
 end
 
@@ -34,6 +36,8 @@ end
 #EDIT
 get '/stock/:id/edit' do
   #code that takes me to a stock edit form page.
+  @artists = Artist.all
+  @albums = Album.all
   @stock = Stock.find(params[:id])
   erb(:'/stock/edit')
 end

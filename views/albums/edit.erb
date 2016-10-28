@@ -4,9 +4,11 @@
   <label for="title">Album Title:</label>
   <input type="text" name="title" id="title" value="<%= @album.title %>">
   <label for="artist">Artist:</label>
-  <input type="text" name="artist" id="artist" value="<%= @album.artist.name %>">
-  <label for="artist_id">Artist ID:</label>
-  <input type="number" min="0" name="artist_id" id="artist_id" value="<%= @album.artist_id %>">
+  <select name="artist_id" id="artist">
+    <% @artists.each do |artist| %>
+    <option value="<%= artist.id %>"><%= artist.name %></option>
+    <% end %>
+  </select>
   <label for="year">Year:</label>
   <input type="number" min="1920" name="year" id="year" value="<%= @album.year %>">
 
