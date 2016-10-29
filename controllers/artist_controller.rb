@@ -7,6 +7,7 @@ end
 
 #NEW
 get '/artists/new' do
+  @genres = Genre.all
   erb(:'/artists/new')
 end
 
@@ -28,6 +29,7 @@ end
 #EDIT
 get '/artists/:id/edit' do
   #code that takes me to an artist edit form page.
+  @genres = Genre.all
   @artist = Artist.find(params[:id])
   erb(:'/artists/edit')
 end

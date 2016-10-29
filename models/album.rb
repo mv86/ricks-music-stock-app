@@ -4,18 +4,19 @@ require_relative 'stock'
 
 class Album
 
-  attr_reader :id, :title, :year, :artist_id
+  attr_reader :id, :title, :year, :genre, :artist_id
 
   def initialize(params)
     @id = params['id'].to_i
     @title = params['title']
     @year = params['year'].to_i
+    @genre = params['genre']
     @artist_id = params['artist_id'].to_i
   end
 
   def save
-    sql = "INSERT INTO albums (title, year, artist_id) 
-    VALUES ('#{@title}', #{@year}, #{@artist_id}) RETURNING *"
+    sql = "INSERT INTO albums (title, year, genre, artist_id) 
+    VALUES ('#{@title}', #{@year}, '#{@genre}', #{@artist_id}) RETURNING *"
     album = SqlRunner.run(sql).first
     @id = album['id'].to_i
   end
@@ -53,6 +54,7 @@ class Album
     sql = "UPDATE albums SET
     title = '#{params['title']}',
     year = #{params['year']},
+    genre = '#{params['genre']}',
     artist_id = #{params['artist_id']}
     WHERE id = #{params['id']}"
     SqlRunner.run(sql)

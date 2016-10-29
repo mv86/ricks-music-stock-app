@@ -3,18 +3,19 @@ require_relative '../db/sql_runner'
 
 class Artist
 
-  attr_reader :id, :name, :type
+  attr_reader :id, :name, :type, :genre
 
   def initialize(params)
     @id = params['id'].to_i
     @name = params['name']
     @type = params['type']
+    @genre = params['genre']
   end
 
   def save
     sql = "INSERT INTO artists 
-    (name, type) VALUES 
-    ('#{@name}', '#{@type}')
+    (name, type, genre) VALUES 
+    ('#{@name}', '#{@type}', '#{@genre}')
     RETURNING *"
     artist = SqlRunner.run(sql).first
     @id = artist['id'].to_i
@@ -45,7 +46,8 @@ class Artist
   def self.update(params)
     sql = "UPDATE artists SET 
     name = '#{params['name']}', 
-    type = '#{params['type']}'
+    type = '#{params['type']}',
+    genre = '#{params['genre']}'
     WHERE id = #{params['id']}"
     SqlRunner.run(sql)
   end

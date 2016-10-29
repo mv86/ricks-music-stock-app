@@ -25,14 +25,16 @@ genre7 = Genre.new( {'genre' => 'Jazz'} )
 genre7.save
 genre8 = Genre.new( {'genre' => 'UK Hip Hop'} )
 genre8.save
+genre9 = Genre.new( {'genre' => 'Indie'} )
+genre9.save
 
-artist1 = Artist.new( {'name' => 'Jay Z', 'type' => 'Solo Artist'} )
+artist1 = Artist.new( {'name' => 'Jay Z', 'type' => 'Solo Artist', 'genre' => genre2.genre} )
 artist1.save
-artist2 = Artist.new( {'name' => 'Black Sabbath', 'type' => 'Group'} )
+artist2 = Artist.new( {'name' => 'Black Sabbath', 'type' => 'Group', 'genre' => genre5.genre} )
 artist2.save
-artist3 = Artist.new( {'name' => 'Jehst', 'type' => 'Solo Artist'} )
+artist3 = Artist.new( {'name' => 'Jehst', 'type' => 'Solo Artist', 'genre' => genre8.genre} )
 artist3.save
-artist4 = Artist.new( {'name' => 'Blur', 'type' => 'Group'} )
+artist4 = Artist.new( {'name' => 'Blur', 'type' => 'Group', 'genre' => genre9.genre} )
 artist4.save
 # artist1 = Artist.new( {'name' => 'Jay Z', 'type' => 'Solo Artist'} )
 # artist1.save
@@ -47,19 +49,19 @@ artist4.save
 # artist2 = Artist.new( {'name' => 'Black Sabbath', 'type' => 'Group'} )
 # artist2.save
 
-album1 = Album.new( {'title' => 'The Black Album', 'year' => 2003, 'artist_id' => artist1.id} )
+album1 = Album.new( {'title' => 'The Black Album', 'year' => 2003, 'artist_id' => artist1.id, 'genre' => genre2.genre} )
 album1.save
-album2 = Album.new( {'title' => 'Paranoid', 'year' => 1970, 'artist_id' => artist2.id} )
+album2 = Album.new( {'title' => 'Paranoid', 'year' => 1970, 'artist_id' => artist2.id, 'genre' => genre5.genre} )
 album2.save
-album3 = Album.new( {'title' => 'The Return Of The Drifter', 'year' => 2002, 'artist_id' => artist3.id} )
+album3 = Album.new( {'title' => 'The Return Of The Drifter', 'year' => 2002, 'artist_id' => artist3.id, 'genre' => genre8.genre} )
 album3.save
-album4 = Album.new( {'title' => 'Falling Down', 'year' => 2003, 'artist_id' => artist3.id} )
+album4 = Album.new( {'title' => 'Falling Down', 'year' => 2003, 'artist_id' => artist3.id, 'genre' => genre8.genre} )
 album4.save
-album5 = Album.new( {'title' => 'Parklife', 'year' => 1996, 'artist_id' => artist4.id} )
+album5 = Album.new( {'title' => 'Parklife', 'year' => 1996, 'artist_id' => artist4.id, 'genre' => genre9.genre} )
 album5.save
-album6 = Album.new( {'title' => 'Blur', 'year' => 1992, 'artist_id' => artist4.id} )
+album6 = Album.new( {'title' => 'Blur', 'year' => 1992, 'artist_id' => artist4.id, 'genre' => genre1.genre} )
 album6.save
-album7 = Album.new( {'title' => 'The Dragon Of An Ordinary Family', 'year' => 2011, 'artist_id' => artist3.id} )
+album7 = Album.new( {'title' => 'The Dragon Of An Ordinary Family', 'year' => 2011, 'artist_id' => artist3.id, 'genre' => genre8.genre} )
 album7.save
 # album2 = Album.new( {'title' => 'Paranoid', 'year' => 1970, 'artist_id' => artist2.id} )
 # album2.savealbum2 = Album.new( {'title' => 'Paranoid', 'year' => 1970, 'artist_id' => artist2.id} )

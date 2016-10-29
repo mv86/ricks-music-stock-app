@@ -10,6 +10,7 @@ end
 #NEW
 get '/albums/new' do
   #code that returns me to the new form
+  @genres = Genre.all
   @artists = Artist.all
   erb(:'/albums/new')
 end
@@ -32,6 +33,7 @@ end
 #EDIT
 get '/albums/:id/edit' do
   #code that takes me to an album edit form page.
+  @genres = Genre.all
   @artists = Artist.all
   @album = Album.find(params[:id])
   erb(:'/albums/edit')

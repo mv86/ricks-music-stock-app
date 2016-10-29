@@ -11,6 +11,11 @@
   </select>
   <label for="year">Year:</label>
   <input type="number" min="1920" name="year" id="year" value="<%= @album.year %>">
+  <select name="genre" id="genre">
+    <% @genres.each do |genre| %>
+    <option value="<%= genre.genre %>"><%= genre.genre %></option>
+    <% end %>
+  </select>
 
   <input type="hidden" name="_method" value="put">
   <input type="submit" value="Update Album">
