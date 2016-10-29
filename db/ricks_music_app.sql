@@ -1,6 +1,7 @@
 DROP TABLE stock;
 DROP TABLE albums;
 DROP TABLE artists;
+DROP TABLE genre;
 
 CREATE TABLE artists (
   id SERIAL4 PRIMARY KEY,
@@ -21,4 +22,9 @@ CREATE TABLE stock (
   buy_price DECIMAL(4, 2),
   sell_price DECIMAL(4, 2),
   album_id INT4 REFERENCES albums(id) ON DELETE CASCADE
+);
+
+CREATE TABLE genre (
+  id SERIAL4 PRIMARY KEY,
+  genre VARCHAR(255)
 );
