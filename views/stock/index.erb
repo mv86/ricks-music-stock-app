@@ -14,7 +14,7 @@
     <li>
       <h3>Dude, these items are super low!</h3>
       <% @stock_very_low.each do |item| %>
-      <p><%= item.artist.name %></p>
+      <p><%= item.album.artist.name %></p>
       <p><%= item.album.title %></p>
       <p>Quantity: <%= item.quantity %></p>
       <a href="/stock/new">Order More Now</a>
@@ -28,7 +28,7 @@
     <li>
       <h3>These items are fairly low.</h3>
       <% @stock_low.each do |item| %>
-      <p><%= item.artist.name %></p>
+      <p><%= item.album.artist.name %></p>
       <p><%= item.album.title %></p>
       <p>Quntity: <%= item.quantity %></p>
       <a href="/stock/new">Order More Now</a>
@@ -41,7 +41,7 @@
 
 <%  @stock.each do |item| %>
 <b>Artist:</b>
-<%= item.artist.name %>
+<%= item.album.artist.name %>
 <br><br>
 <b>Album:</b>
 <%= item.album.title %>

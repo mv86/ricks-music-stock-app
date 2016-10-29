@@ -1,4 +1,4 @@
-<h1>You have <%= @stock.quantity %> copies of <%= @stock.album.title %> by <%= @stock.artist.name %>.</h1>
+<h1>You have <%= @stock.quantity %> copies of <%= @stock.album.title %> by <%= @stock.album.artist.name %>.</h1>
 
 <a href="/stock/<%= @stock.id %>/edit">Edit stock item</a>
 <br><br><br>

@@ -5,32 +5,23 @@ require_relative('../models/inventory')
 
 class Stock
 
-  attr_reader :id, :quantity, :buy_price, :sell_price, :artist_id, :album_id
+  attr_reader :id, :quantity, :buy_price, :sell_price, :album_id
 
   def initialize(params)
     @id = params['id'].to_i
     @quantity = params['quantity'].to_i
     @buy_price = params['buy_price'].to_f
     @sell_price = params['sell_price'].to_f
-    @artist_id = params['artist_id'].to_i
     @album_id = params['album_id'].to_i
   end
 
   def save
     sql = "INSERT INTO stock 
-    (quantity, buy_price, sell_price, artist_id, album_id)
-    VALUES (#{@quantity}, #{@buy_price}, #{@sell_price},
-    #{@artist_id}, #{@album_id}) RETURNING *"
+    (quantity, buy_price, sell_price, album_id)
+    VALUES (#{@quantity}, #{@buy_price}, #{@sell_price}, 
+    #{@album_id}) RETURNING *"
     stock = SqlRunner.run(sql).first
     @id = stock['id'].to_i
-  end
-
-  def artist
-    sql = "SELECT * FROM artists
-    WHERE id = #{@artist_id}"
-    artist = SqlRunner.run(sql).first
-    artist_info = Artist.new(artist)
-    return artist_info
   end
 
   def album
@@ -115,7 +106,6 @@ class Stock
     quantity = #{params['quantity']},
     buy_price = #{params['buy_price']},
     sell_price = #{params['sell_price']},
-    artist_id = #{params['artist_id']},
     album_id = #{params['album_id']}
     WHERE id = #{params['id']}"
     SqlRunner.run(sql) 

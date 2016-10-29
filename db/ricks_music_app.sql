@@ -20,6 +20,5 @@ CREATE TABLE stock (
   quantity INT4,
   buy_price DECIMAL(4, 2),
   sell_price DECIMAL(4, 2),
-  artist_id INT4 REFERENCES artists(id) ON DELETE CASCADE,
   album_id INT4 REFERENCES albums(id) ON DELETE CASCADE
 );
