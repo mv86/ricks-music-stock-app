@@ -1,5 +1,9 @@
 <h1>This genre is <%= @genre.genre %>.</h1>
 
+<% @genre_albums.each do |album| %>
+  <%= album.title %>
+<% end %>
+
 <form action="/genres/<%= @genre.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Delete Genre">

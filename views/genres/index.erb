@@ -2,6 +2,7 @@
 <br>
 <% @genres.each do |genre| %>
   <%= genre.genre %>
-  <br>
+  <br><br>
+  <a href="/genres/<%= genre.id %>">See All Stock In This Genre</a>
   <p>---------------------------------</p>
 <% end %>

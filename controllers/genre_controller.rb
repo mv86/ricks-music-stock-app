@@ -21,6 +21,7 @@ end
 #SHOW
 get '/genres/:id' do
   #code that shows an individual artist entry.
+  @genre_albums = Genre.albums(params[:id])
   @genre = Genre.find(params[:id])
   erb(:'/genres/show')
 end
