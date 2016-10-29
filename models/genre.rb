@@ -43,4 +43,9 @@ class Genre
     SqlRunner.run(sql)
   end
 
+  def self.delete_all
+    sql = "DELETE FROM genres"
+    SqlRunner.run(sql)
+  end
+
 end

@@ -1,11 +1,30 @@
 require_relative '../models/album'
 require_relative '../models/artist'
+require_relative '../models/genre'
 require_relative '../models/inventory'
 require_relative '../models/stock'
 
 Artist.delete_all
 Album.delete_all
+Genre.delete_all
 Stock.delete_all
+
+genre1 = Genre.new( {'genre' => 'Rock'} )
+genre1.save
+genre2 = Genre.new( {'genre' => 'US Hip Hop'} )
+genre2.save
+genre3 = Genre.new( {'genre' => 'Reggae'} )
+genre3.save
+genre4 = Genre.new( {'genre' => 'Pop'} )
+genre4.save
+genre5 = Genre.new( {'genre' => 'Metal'} )
+genre5.save
+genre6 = Genre.new( {'genre' => 'Dance'} )
+genre6.save
+genre7 = Genre.new( {'genre' => 'Jazz'} )
+genre7.save
+genre8 = Genre.new( {'genre' => 'UK Hip Hop'} )
+genre8.save
 
 artist1 = Artist.new( {'name' => 'Jay Z', 'type' => 'Solo Artist'} )
 artist1.save
