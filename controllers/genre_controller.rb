@@ -1,22 +1,22 @@
 require_relative '../models/genre'
 #INDEX
-get '/genre' do
+get '/genres' do
   @genre = Genre.all
-  erb(:'/genre/index')
+  erb(:'/genres/index')
 end
 
-# #NEW
-# get '/artists/new' do
-#   erb(:'/artists/new')
-# end
+#NEW
+get '/genres/new' do
+  erb(:'/genres/new')
+end
 
-# #CREATE
-# post '/artists' do
-#   #code that creates an instance of a new artist. redirects to all artists page. 
-#   @artist = Artist.new(params)
-#   @artist.save
-#   redirect to('/artists')
-# end
+#CREATE
+post '/genres' do
+  #code that creates an instance of a new artist. redirects to all artists page. 
+  @genre = Genre.new(params)
+  @genre.save
+  redirect to('/genres')
+end
 
 # #SHOW
 # get '/artists/:id' do

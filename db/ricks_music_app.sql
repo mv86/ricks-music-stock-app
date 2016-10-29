@@ -1,7 +1,7 @@
 DROP TABLE stock;
 DROP TABLE albums;
 DROP TABLE artists;
-DROP TABLE genre;
+DROP TABLE genres;
 
 CREATE TABLE artists (
   id SERIAL4 PRIMARY KEY,
@@ -24,7 +24,7 @@ CREATE TABLE stock (
   album_id INT4 REFERENCES albums(id) ON DELETE CASCADE
 );
 
-CREATE TABLE genre (
+CREATE TABLE genres (
   id SERIAL4 PRIMARY KEY,
   genre VARCHAR(255)
 );
