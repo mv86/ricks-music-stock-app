@@ -1,7 +1,7 @@
 require_relative '../models/genre'
 #INDEX
 get '/genres' do
-  @genre = Genre.all
+  @genres = Genre.all
   erb(:'/genres/index')
 end
 
@@ -18,30 +18,30 @@ post '/genres' do
   redirect to('/genres')
 end
 
-# #SHOW
-# get '/artists/:id' do
-#   #code that shows an individual artist entry.
-#   @artist = Artist.find(params[:id])
-#   erb(:'/artists/show')
-# end
+#SHOW
+get '/genres/:id' do
+  #code that shows an individual artist entry.
+  @genre = Genre.find(params[:id])
+  erb(:'/genres/show')
+end
 
-# #EDIT
-# get '/artists/:id/edit' do
-#   #code that takes me to an artist edit form page.
-#   @artist = Artist.find(params[:id])
-#   erb(:'/artists/edit')
-# end
+#EDIT
+get '/genres/:id/edit' do
+  #code that takes me to an artist edit form page.
+  @genre = Genre.find(params[:id])
+  erb(:'/genres/edit')
+end
 
-# #UPDATE
-# put '/artists/:id' do
-#   #code that returns the updated artist for this id. back to individual artist page
-#   @artist = Artist.update(params)
-#   redirect to('/artists')
-# end
+#UPDATE
+put '/genres/:id' do
+  #code that returns the updated artist for this id. back to individual artist page
+  @genre = Genre.update(params)
+  redirect to('/genres')
+end
 
-# #DELETE
-# delete '/artists/:id' do
-#   #code that deletes the current artist only
-#   @artist = Artist.delete(params[:id])
-#   redirect to ('/artists')
-# end
+#DELETE
+delete '/genres/:id' do
+  #code that deletes the current artist only
+  @genre = Genre.delete(params[:id])
+  redirect to ('/genres')
+end

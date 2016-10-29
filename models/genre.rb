@@ -24,4 +24,23 @@ class Genre
     return result
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM genres WHERE id = #{id}"
+    genre = SqlRunner.run(sql).first
+    result = Genre.new(genre)
+    return result
+  end
+
+  def self.update(params)
+    sql = "UPDATE genres SET
+    genre = '#{params['genre']}'
+    WHERE id = #{params['id']}"
+    SqlRunner.run(sql).first
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM genres WHERE id = #{id}"
+    SqlRunner.run(sql)
+  end
+
 end
