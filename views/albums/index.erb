@@ -1,6 +1,27 @@
 <br>
 <a href="/albums/new">>>Add New Album<<</a>
 
+<br><br><br>
+
+<form method="get">
+  Search Album Name
+  <input name="search" value="" type="text" />
+  <input type="submit" value="search" />
+</form>
+<br>
+<% if @albums_search.count == @albums.count %>
+<p></p>
+<% elsif @albums_search.count > 0 %>
+  <% @albums_search.each do |album| %>
+    <a href="/albums/<%= album.id %>"><%= album.title %> by <%= album.artist.name %></a>
+  <% end %>
+  <br>
+<% else %>
+  <p>Sorry, no results found! Did you remember to capitalise?</p>
+<% end %>
+
+<br>
+
 <h1>These are your current albums:</h1>
 
 <% @albums.each do |album| %>

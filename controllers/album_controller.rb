@@ -3,6 +3,8 @@ require_relative '../models/artist'
 #INDEX
 get '/albums' do
   #code that returns all albums
+  query = params[:search]
+  @albums_search = Album.search(query)
   @albums = Album.all
   erb(:'/albums/index')
 end

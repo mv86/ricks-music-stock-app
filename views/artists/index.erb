@@ -1,6 +1,27 @@
 <br>
 <a href="/artists/new">>>Add New Artist<<</a>
 
+<br><br><br>
+
+<form method="get">
+  Search Artist Name
+  <input name="search" value="" type="text" />
+  <input type="submit" value="search" />
+</form>
+<br>
+<% if @artists_search.count == @artists.count %>
+<p></p>
+<% elsif @artists_search.count > 0 %>
+  <% @artists_search.each do |artist| %>
+    <a href="/artists/<%= artist.id %>"><%= artist.name %></a>
+  <% end %>
+  <br>
+<% else %>
+  <p>Sorry, no results found! Did you remember to capitalise?</p>
+<% end %>
+
+<br>
+
 <h1>These are your current artists:</h1>
 
 <% @artists.each do |artist| %>

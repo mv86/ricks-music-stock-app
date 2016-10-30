@@ -50,6 +50,14 @@ class Album
     return result
   end
 
+  def self.search(query)
+    query = query.to_s
+    sql = "SELECT * FROM albums WHERE title LIKE '%#{query}%' ORDER BY title ASC"
+    albums = SqlRunner.run(sql)
+    result = albums.map { |album| Album.new(album)}
+    return result
+  end
+
   def self.update(params)
     sql = "UPDATE albums SET
     title = '#{params['title']}',

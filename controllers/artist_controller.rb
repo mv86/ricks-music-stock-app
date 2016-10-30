@@ -1,6 +1,8 @@
 require_relative '../models/artist'
 #INDEX
 get '/artists' do
+  query = params[:search]
+  @artists_search = Artist.search(query)
   @artists = Artist.all
   erb(:'/artists/index')
 end

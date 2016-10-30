@@ -43,6 +43,14 @@ class Artist
     return result 
   end
 
+  def self.search(query)
+    query = query.to_s
+    sql = "SELECT * FROM artists WHERE name LIKE '%#{query}%' ORDER BY name ASC"
+    artists = SqlRunner.run(sql)
+    result = artists.map { |artist| Artist.new(artist)}
+    return result
+  end
+
   def self.update(params)
     sql = "UPDATE artists SET 
     name = '#{params['name']}', 
