@@ -21,7 +21,7 @@ genre5 = Genre.new( {'genre' => 'Metal'} )
 genre5.save
 genre6 = Genre.new( {'genre' => 'Dance'} )
 genre6.save
-genre7 = Genre.new( {'genre' => 'Jazz'} )
+genre7 = Genre.new( {'genre' => 'World Music'} )
 genre7.save
 genre8 = Genre.new( {'genre' => 'UK Hip Hop'} )
 genre8.save

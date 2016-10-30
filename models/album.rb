@@ -37,7 +37,7 @@ class Album
   end
 
   def self.all
-    sql = "SELECT * FROM albums"
+    sql = "SELECT * FROM albums ORDER BY title ASC"
     albums = SqlRunner.run(sql)
     all_albums = albums.map { |album| Album.new(album) }
     return all_albums

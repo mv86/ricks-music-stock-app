@@ -88,7 +88,7 @@ class Stock
   end
 
   def self.all
-    sql = "SELECT * FROM stock"
+    sql = "SELECT * FROM stock ORDER BY quantity ASC"
     stock = SqlRunner.run(sql)
     all_stock = stock.map { |stock_item| Stock.new(stock_item) }
     return all_stock
