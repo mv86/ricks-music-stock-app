@@ -1,10 +1,14 @@
-<h2>You currently have these <%= @genre.genre %> albums.</h2>
+<% if @genre_albums.count == 0 %>
+<h2>You currently have no <%= @genre.genre %> stock!</h2>
+<% else %>
+<h2>You currently have these <%= @genre.genre %> albums:</h2>
 <br>
 <% @genre_albums.each do |album| %>
 <b>Album: </b><%= album.title %>
 <br><br>
 <b>Artist: </b><%= album.artist.name %>(<%= album.artist.genre %>)
 <p>---------------------------------</p>
+<% end %>
 <% end %>
 <br>
 <form action="/genres/<%= @genre.id %>" method="post">
