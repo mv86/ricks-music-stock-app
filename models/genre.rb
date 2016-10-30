@@ -26,13 +26,12 @@ class Genre
     return albums_of_this_genre
   end
 
-  # def artists(params)
-  #   sql = "SELECT * FROM artists INNER JOIN 
-  #   WHERE genre = '#{params['genre']}'"
-  #   artists = SqlRunner.run(sql)
-  #   artists_of_this_genre = artists.map { |artist| Artist.new(artist) }
-  #   return artists_of_this_genre
-  # end
+  def self.artists(id)
+    sql = "SELECT * FROM artists INNER JOIN genres on artists.genre = genres.genre WHERE genres.id = #{id}"
+    artists = SqlRunner.run(sql)
+    artists_of_this_genre = artists.map { |artist| Artist.new(artist) }
+    return artists_of_this_genre
+  end
 
   def self.all
     sql = "SELECT * FROM genres"

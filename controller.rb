@@ -20,7 +20,7 @@ get '/json' do
 
   all_stock_array = []
   all_stock.each do |item|
-    all_stock_array << item.artist.name
+    all_stock_array << item.album.artist.name
     all_stock_array << item.album.title
     all_stock_array << item.quantity
   end
