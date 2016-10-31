@@ -5,8 +5,8 @@
   <input type="text" name="name" id="name" value="<%= @artist.name %>">
   <label for="type">Type:</label>
   <select name="type" id="type">
-    <option value="Group">Group</option>
-    <option value="Solo Artist">Solo Artist</option>
+    <option value="Group" <%= 'selected' if @artist.type == 'Group' %>>Group</option>
+    <option value="Solo Artist" <%= 'selected' if @artist.type == 'Solo Artist' %>>Solo Artist</option>
   </select>
   <label for="genre">Genre:</label>
   <select name="genre" id="genre">
