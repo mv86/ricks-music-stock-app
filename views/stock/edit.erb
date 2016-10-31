@@ -10,13 +10,13 @@
   <label for="artist">Artist:</label>
   <select name="artist_id" id="artist">
     <% @artists.each do |artist| %>
-    <option value="<%= artist.id %>"><%= artist.name %></option>
+    <option value="<%= artist.id %>"<%= 'selected' if @stock.album.artist.id == artist.id %>><%= artist.name %></option>
     <% end %>
   </select>
   <label for="album">Album:</label>
   <select name="album_id" id="album">
   <% @albums.each do |album| %>
-    <option value="<%= album.id %>"><%= album.title %></option>
+    <option value="<%= album.id %>"<%= 'selected' if @stock.album.id == album.id %>><%= album.title %></option>
     <% end %>
   </select>
 

@@ -14,8 +14,9 @@
 <% elsif @artists_search.count > 0 %>
   <% @artists_search.each do |artist| %>
     <a href="/artists/<%= artist.id %>"><%= artist.name %></a>
+    <br><br>
   <% end %>
-  <br>
+  
 <% else %>
   <p>Sorry, no results found! Did you remember to capitalise?</p>
 <% end %>

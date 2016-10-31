@@ -11,8 +11,8 @@
   <label for="genre">Genre:</label>
   <select name="genre" id="genre">
     <% @genres.each do |genre| %>
-        <option value="<%= genre.genre %>"><%= genre.genre %></option>
-        <% end %>
+    <option value="<%= genre.genre %>"<%= 'selected' if @artist.genre == genre.genre %>><%= genre.genre %></option>
+    <% end %>
   </select>
   
   <input type="hidden" name="_method" value="put">

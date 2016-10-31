@@ -6,14 +6,14 @@
   <label for="artist">Artist:</label>
   <select name="artist_id" id="artist">
     <% @artists.each do |artist| %>
-    <option value="<%= artist.id %>"><%= artist.name %></option>
+    <option value="<%= artist.id %>"<%= "selected" if @album.artist.id == artist.id %>><%= artist.name %></option>
     <% end %>
   </select>
   <label for="year">Year:</label>
   <input type="number" min="1920" name="year" id="year" value="<%= @album.year %>">
   <select name="genre" id="genre">
     <% @genres.each do |genre| %>
-    <option value="<%= genre.genre %>"><%= genre.genre %></option>
+    <option value="<%= genre.genre %>"<%= 'selected' if @album.genre == genre.genre %>><%= genre.genre %></option>
     <% end %>
   </select>
 

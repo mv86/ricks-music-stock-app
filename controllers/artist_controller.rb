@@ -31,6 +31,7 @@ end
 #EDIT
 get '/artists/:id/edit' do
   #code that takes me to an artist edit form page.
+  @artists = Artist.all
   @genres = Genre.all
   @artist = Artist.find(params[:id])
   erb(:'/artists/edit')
