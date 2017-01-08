@@ -20,9 +20,12 @@ get '/json' do
 
   all_stock_array = []
   all_stock.each do |item|
-    all_stock_array << item.album.artist.name
-    all_stock_array << item.album.title
-    all_stock_array << item.quantity
+    individual_stock_item = {
+    "Artist Name" => item.album.artist.name,
+    "Album Title" => item.album.title,
+    "Quantity In Stock" => item.quantity
+  }
+  all_stock_array.push(individual_stock_item)
   end
 
   return all_stock_array.to_json
