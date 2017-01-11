@@ -10,7 +10,7 @@
 </form>
 <br>
 <% if @artists_search.count == @artists.count %>
-<p></p>
+  <p></p>
 <% elsif @artists_search.count > 0 %>
   <% @artists_search.each do |artist| %>
     <a href="/artists/<%= artist.id %>"><%= artist.name %></a>

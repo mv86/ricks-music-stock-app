@@ -34,6 +34,8 @@ Ruby with Sinatra and PG Gems.
 
 PostgreSQL - install instructions [here](https://www.postgresql.org/docs/9.6/static/tutorial-install.html)
 
+## Instructions
+
 Clone repository using `git clone https://github.com/mv86/ricks-music-stock-app`
 Create psql database using `psql` then `create database ricks_music_app`
 Create database tables using `psql -d ricks_music_app -f db/ricks_music_app.sql` from root project folder
