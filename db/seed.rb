@@ -36,18 +36,7 @@ artist3 = Artist.new( {'name' => 'Jehst', 'type' => 'Solo Artist', 'genre' => ge
 artist3.save
 artist4 = Artist.new( {'name' => 'Blur', 'type' => 'Group', 'genre' => genre9.genre} )
 artist4.save
-# artist1 = Artist.new( {'name' => 'Jay Z', 'type' => 'Solo Artist'} )
-# artist1.save
-# artist2 = Artist.new( {'name' => 'Black Sabbath', 'type' => 'Group'} )
-# artist2.save
-# artist1 = Artist.new( {'name' => 'Jay Z', 'type' => 'Solo Artist'} )
-# artist1.save
-# artist2 = Artist.new( {'name' => 'Black Sabbath', 'type' => 'Group'} )
-# artist2.save
-# artist1 = Artist.new( {'name' => 'Jay Z', 'type' => 'Solo Artist'} )
-# artist1.save
-# artist2 = Artist.new( {'name' => 'Black Sabbath', 'type' => 'Group'} )
-# artist2.save
+
 
 album1 = Album.new( {'title' => 'The Black Album', 'year' => 2003, 'artist_id' => artist1.id, 'genre' => genre2.genre} )
 album1.save
@@ -63,10 +52,7 @@ album6 = Album.new( {'title' => 'Blur', 'year' => 1992, 'artist_id' => artist4.i
 album6.save
 album7 = Album.new( {'title' => 'The Dragon Of An Ordinary Family', 'year' => 2011, 'artist_id' => artist3.id, 'genre' => genre8.genre} )
 album7.save
-# album2 = Album.new( {'title' => 'Paranoid', 'year' => 1970, 'artist_id' => artist2.id} )
-# album2.savealbum2 = Album.new( {'title' => 'Paranoid', 'year' => 1970, 'artist_id' => artist2.id} )
-# album2.savealbum2 = Album.new( {'title' => 'Paranoid', 'year' => 1970, 'artist_id' => artist2.id} )
-# album2.save
+
 
 stock1 = Stock.new( {'quantity' => 2, 'buy_price' => 4.20, 'sell_price' => 10.50, 'artist_id' => artist1.id, 'album_id' => album1.id})
 stock1.save
