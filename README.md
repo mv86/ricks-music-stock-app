@@ -3,8 +3,7 @@
 ## Description
 
 A RESTful web application allowing a record store owner to Create, Read, Update & Delete 
-artists and albums from his stock inventory.\n
-1st solo project while studying at CodeClan.
+artists and albums from his stock inventory. My first solo project while studying at CodeClan.
 
 ## MVP
 
