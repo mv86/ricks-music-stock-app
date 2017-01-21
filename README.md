@@ -35,11 +35,11 @@ PostgreSQL - install instructions [here](https://www.postgresql.org/docs/9.6/sta
 
 Clone repository using `git clone https://github.com/mv86/ricks-music-stock-app`
 
-Create psql database using `psql` then `create database ricks_music_app`
+Create psql database using command `createdb ricks_music_app` from terminal
 
 Create database tables using `psql -d ricks_music_app -f db/ricks_music_app.sql` from root project folder
 
-Add seed data using `ruby db/seed.rb` from root project folder
+Add seed data using `ruby db/seeds.rb` from root project folder
 
 Start server using `ruby controller.rb` from root project folder
 
